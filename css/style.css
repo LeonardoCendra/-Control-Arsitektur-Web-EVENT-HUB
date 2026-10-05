@@ -1,35 +1,88 @@
+:root {
+  --biru: #0d47a1;
+  --kuning: #ffc107;
+}
+
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   background-color: #f4f7fb;
   color: #222;
   margin: 0;
+  line-height: 1.6;
 }
 
+h1, h2, h3 {
+  font-family: Georgia, serif;
+}
+
+/* Bagian beranda: gradasi buatan sendiri */
 #beranda {
-  background-color: #0d47a1;
+  background: linear-gradient(135deg, #0d47a1, #1976d2);
   color: white;
   padding: 60px 20px;
+  margin-top: 16px;
   text-align: center;
-  border-bottom: 6px solid #ffc107;
+  border-bottom: 6px solid var(--kuning);
+  border-radius: 0 0 12px 12px;
 }
 
-#workshop article {
+#beranda a:not(.btn) {
+  color: var(--kuning);
+}
+
+/* Flexbox: daftar fasilitas */
+.fasilitas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+}
+
+.fasilitas li {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 8px 16px;
+  border-radius: 999px;
+}
+
+/* Kartu workshop: efek hover buatan sendiri */
+.card {
+  border: 1px solid #ddd;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--biru);
+  box-shadow: 0 8px 20px rgba(13, 71, 161, 0.25);
+}
+
+.navbar .nav-link:hover {
+  color: var(--kuning);
+}
+
+/* Grid: form dua kolom di desktop */
+#formDaftar {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 24px;
   background-color: white;
+  padding: 24px;
   border: 1px solid #ddd;
   border-radius: 8px;
-  margin: 10px;
-  padding: 16px;
-  transition: transform 0.2s;
 }
 
-#workshop article:hover {
-  transform: translateY(-4px);
-  border-color: #0d47a1;
+#formDaftar button {
+  grid-column: 1 / -1;
+  justify-self: start;
 }
 
 input:focus,
 select:focus {
-  outline: 2px solid #ffc107;
+  outline: 3px solid var(--kuning);
+  border-color: var(--biru);
 }
 
 footer {
@@ -37,10 +90,21 @@ footer {
   color: white;
   text-align: center;
   padding: 16px;
+  margin-top: 32px;
 }
 
+/* Tampilan mobile */
 @media (max-width: 768px) {
   #beranda {
-    padding: 30px 10px;
+    padding: 30px 12px;
+  }
+
+  #formDaftar {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
   }
 }

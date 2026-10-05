@@ -1,0 +1,46 @@
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f4f7fb;
+  color: #222;
+  margin: 0;
+}
+
+#beranda {
+  background-color: #0d47a1;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  border-bottom: 6px solid #ffc107;
+}
+
+#workshop article {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 10px;
+  padding: 16px;
+  transition: transform 0.2s;
+}
+
+#workshop article:hover {
+  transform: translateY(-4px);
+  border-color: #0d47a1;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #ffc107;
+}
+
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 16px;
+}
+
+@media (max-width: 768px) {
+  #beranda {
+    padding: 30px 10px;
+  }
+}
